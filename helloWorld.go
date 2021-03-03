@@ -8,34 +8,40 @@ import (
 )
 
 func main() {
-	menu := "Main menu:\n  Enter:\n 1: printStuff\n 2: inputStuff\n 3: loops\n 4: arrayStuff\n 5: mapStuff\n 6: functionStuff\n 7: mutableImmutableStuff\n 8: pointersStuff\n"
-	fmt.Println(menu)
+	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n \n"
 	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	inputCmd, _ := strconv.ParseInt(scanner.Text(), 10, 64)
-	switch inputCmd {
-	case 1:
-		printStuff()
-		break
-	case 2:
-		inputStuff()
-		break
-	case 3:
-		loops()
-		break
-	case 4:
-		arrayAndSliceStuff()
-		break
-	case 5:
-		mapStuff()
-	case 6:
-		functionStuff()
-	case 7:
-		mutableImmutableStuff()
-	case 8:
-		pointersStuff()
-	default:
-		break
+	var inputCmd int64
+	stop := false
+	for !stop {
+		fmt.Println(menu)
+		scanner.Scan()
+		inputCmd, _ = strconv.ParseInt(scanner.Text(), 10, 64)
+		switch inputCmd {
+		case 0:
+			stop = true
+		case 1:
+			printStuff()
+			break
+		case 2:
+			inputStuff()
+			break
+		case 3:
+			loops()
+			break
+		case 4:
+			arrayAndSliceStuff()
+			break
+		case 5:
+			mapStuff()
+		case 6:
+			functionStuff()
+		case 7:
+			mutableImmutableStuff()
+		case 8:
+			pointersStuff()
+		default:
+			break
+		}
 	}
 	fmt.Println("Bye bye")
 }
