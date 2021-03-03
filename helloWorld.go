@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	menu := "Main menu:\n  Enter:\n 1: printStuff\n 2: inputStuff\n 3: loops\n 4: arrayStuff\n"
+	menu := "Main menu:\n  Enter:\n 1: printStuff\n 2: inputStuff\n 3: loops\n 4: arrayStuff\n 5: mapStuff\n 6: functionStuff"
 	fmt.Println(menu)
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
@@ -26,6 +26,10 @@ func main() {
 	case 4:
 		arrayAndSliceStuff()
 		break
+	case 5:
+		mapStuff()
+	case 6:
+		functionStuff()
 	default:
 		break
 	}
@@ -154,4 +158,79 @@ func arrayAndSliceStuff() {
 		}
 	}
 
+}
+
+func mapStuff() {
+	fmt.Println("########################")
+	fmt.Println("make can be used to declare empty maps")
+	mp1 := make(map[string]int)
+	fmt.Println(mp1)
+	fmt.Println("Declaring map (var mp map[keyType]valueType = map[keyType]valueType{key1:value1, ...}")
+	var mp map[string]int = map[string]int{
+		"apple":  5,
+		"pen":    6,
+		"orange": 7,
+	}
+	fmt.Println(mp)
+	fmt.Println("Changing value of apple, adding pinapple key and deleting orange key")
+	mp["apple"] = 9000
+	mp["pinapple"] = 42
+	delete(mp, "orange")
+	fmt.Println(mp)
+
+	fmt.Println("Take values from map (val, ok := mp[key] ) ")
+	fmt.Println("if the key doesn't exist val will be the default value for that value typ and ok will be false")
+	val1, ok1 := mp["watermelon"]
+	fmt.Println("searching for watermelon:\t var, ok = ", val1, ok1)
+	val2, ok2 := mp["apple"]
+	fmt.Println("searching for apple:\t var, ok = ", val2, ok2)
+
+}
+
+func functionStuff() {
+	fmt.Println("########################")
+	fmt.Println("The syntax is func functionName(parameter1,parameter2 type1, parameter3 type2) (result1,result2 type3)")
+	fmt.Println("To return values assign the values to result1,2.. variables")
+	fmt.Println("calling testFunction(4,5,6,3)")
+	z1, z2, z3 := testFunction(4, 5, 6, 3)
+	fmt.Printf("4+5 = %d\n6/3 = %d 4*5 = %d", z1, z2, z3)
+}
+
+/* z1=x+y z2=f1/f2 z3=x*y */
+func testFunction(x, y int, f1, f2 float64) (z1, z2, z3 int) {
+
+	fmt.Println("I can have a func variable myFunc := func(parameter1,par2 type1) result1 type2 { func body }")
+	mul := mulDeferFunction
+	myfunc := func(a int) {
+		fmt.Printf("a = %d\n", a)
+		return
+	}
+	fmt.Println("I can pass function to another function as parameter with this syntax:")
+	fmt.Println("func myFunc2(myFunc1 func(MF1parameters) MF1results, MF2parameter2) MF2result2")
+	myfunc(7)
+	z1 = x + y
+	defer fmt.Println("the defer keyword allows me to execute the action before returning values")
+	z2 = int(f1 / f2)
+
+	z3 = testInner(mul, x, y)
+	return
+
+}
+func testInner(myFunc func(int, int) int, a, b int) int {
+	return myFunc(a, b)
+}
+
+func mulDeferFunction(x, y int) int {
+	// defer fmt.Println("Adding x and y")
+	sum := 0
+	summing := func(a int) {
+		fmt.Printf("Adding %d at sum that is = %d\n", a, sum)
+		sum += a
+	}
+
+	for i := 0; i < y; i++ {
+		defer summing(x)
+	}
+
+	return sum
 }
