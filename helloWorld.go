@@ -3,12 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 )
 
 func main() {
-	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n \n"
+	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n 9: struct\t\t \n"
 	scanner := bufio.NewScanner(os.Stdin)
 	var inputCmd int64
 	stop := false
@@ -39,6 +40,8 @@ func main() {
 			mutableImmutableStuff()
 		case 8:
 			pointersStuff()
+		case 9:
+			structStuff()
 		default:
 			break
 		}
@@ -296,5 +299,90 @@ func pointersStuff() {
 	fmt.Printf("str1 = %q   \t", str1)
 	change2(&str1)
 	fmt.Printf(" str1 after change2 = %q\n", str1)
+
+}
+
+// Point is : x and y are the coordinates, name is the name of the pointer
+type Point struct {
+	x    int32
+	y    int32
+	name string
+}
+
+// Shape has area
+type Shape interface {
+	area() float64
+	//perimeter() float64
+}
+
+// Circle is : radius and center to represent a circle
+type Circle struct {
+	radius float64
+	// center is the origin of the circle
+	center *Point
+}
+
+func (c *Circle) setRadius(r float64) {
+	c.radius = r
+}
+func (c Circle) getRadius() float64 {
+	return c.radius
+}
+func (c Circle) area() float64 {
+	return math.Pi * c.radius * c.radius
+}
+
+// Rectangle is : height and width
+type Rectangle struct {
+	height float64
+	width  float64
+}
+
+func (r Rectangle) area() float64 {
+	return r.height * r.width
+}
+
+func getArea(s Shape) float64 {
+	return s.area()
+}
+
+func structStuff() {
+
+	fmt.Println("###################")
+	fmt.Println("define a struct: type StructName struct { body }")
+	fmt.Println("istantiate an istance of the struct: var varName StructName := StructName{par1,par2,...}")
+	fmt.Println("I can also use this: varName := StructName{par1:0} // if I don't put all the parameters they will be the default value ")
+	var p1 Point = Point{1, 2, "Point 1"}
+	p2 := &Point{x: 10}
+	fmt.Println(p1, p2)
+	p2.name = "Point 2"
+
+	changeX1 := func(pt Point) {
+		pt.x = 100
+	}
+	changeX2 := func(pt *Point) {
+		pt.x = 100
+	}
+	fmt.Println("p2 = ", p2)
+	changeX1(*p2)
+	fmt.Println("changing x with changeX1 : ", p2)
+	changeX2(p2)
+	fmt.Println("changing x with changeX2 : ", p2)
+
+	c1 := Circle{4.56, &p1}
+	fmt.Println("This is your circle: ", c1)
+	fmt.Println("The center is: ", c1.center, "\tThe x = ", c1.center.x, "\tThe y = ", c1.center.y)
+	fmt.Println("Radius before set  = ", c1.getRadius())
+	c1.setRadius(100)
+	fmt.Println("Radius after set  = ", c1.getRadius())
+
+	r1 := Rectangle{6.9, 8.9}
+	fmt.Println(r1)
+	shapes := []Shape{c1, r1}
+	for _, shape := range shapes {
+		fmt.Println(shape.area())
+		// fmt.Println(getArea(shape))
+
+	}
 
 }
