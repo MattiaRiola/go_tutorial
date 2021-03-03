@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	menu := "Main menu:\n  Enter:\n 1: printStuff\n 2: inputStuff\n 3: loops\n 4: arrayStuff\n 5: mapStuff\n 6: functionStuff"
+	menu := "Main menu:\n  Enter:\n 1: printStuff\n 2: inputStuff\n 3: loops\n 4: arrayStuff\n 5: mapStuff\n 6: functionStuff\n 7: mutableImmutableStuff\n 8: pointersStuff\n"
 	fmt.Println(menu)
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
@@ -30,6 +30,10 @@ func main() {
 		mapStuff()
 	case 6:
 		functionStuff()
+	case 7:
+		mutableImmutableStuff()
+	case 8:
+		pointersStuff()
 	default:
 		break
 	}
@@ -233,4 +237,58 @@ func mulDeferFunction(x, y int) int {
 	}
 
 	return sum
+}
+
+func mutableImmutableStuff() {
+	fmt.Println("##############################")
+	fmt.Println("standard variables and arrays are immutable \"var1 := var2 when i modify var1 var2 wont be modified\"")
+	fmt.Println("int:")
+	x1 := 10
+	y1 := x1
+	y1 = 12
+	fmt.Println("x1 = ", x1, "\ty1 = ", y1)
+	fmt.Println("string:")
+	str1 := "Hello"
+	str2 := str1
+	str2 = "byebye"
+	fmt.Println("str1 = ", str1, "\tstr2 = ", str2)
+	fmt.Println("array:")
+	a1 := [3]int{3, 4, 5}
+	a2 := a1
+	a2[0] = 100
+	fmt.Println("a1 = ", a1, "\ta2 = ", a2)
+
+	fmt.Println("slice and map variables are mutable \"var1 := var2 when i modify var1 var2 will be modified\"")
+	fmt.Println("slice:")
+	var s1 []int = []int{3, 4, 5}
+	s2 := s1
+	s2[0] = 100
+	fmt.Println("s1 = ", s1, "\ts2 = ", s2)
+	fmt.Println("map:")
+	var m1 map[string]int = map[string]int{"Hello": 3}
+	m2 := m1
+	m2["Bye"] = 100
+	fmt.Println("m1 = ", m1, "\tm2 = ", m2)
+
+}
+
+func pointersStuff() {
+	fmt.Println("######################")
+	fmt.Println("pointers and functions")
+	change1 := func(str string) string {
+		str = "Changed!"
+		return str
+	}
+	change2 := func(str *string) {
+		*str = "Changed!"
+		return
+	}
+	str1 := "Hello!"
+	fmt.Printf("str1 = %q   \t", str1)
+	change1(str1)
+	fmt.Printf(" str1 after change1 = %q\n", str1)
+	fmt.Printf("str1 = %q   \t", str1)
+	change2(&str1)
+	fmt.Printf(" str1 after change2 = %q\n", str1)
+
 }
