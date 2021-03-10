@@ -1,4 +1,4 @@
-package main
+package go_tutorial
 
 import (
 	"bufio"
@@ -8,15 +8,25 @@ import (
 	"strconv"
 )
 
-func main() {
+type Settings struct {
+	DEBUGGER    bool
+	MENU_CHOICE int64
+}
+
+func helloWorldTutorial() {
+	settings := Settings{DEBUGGER: true, MENU_CHOICE: 9}
 	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n 9: struct\t\t \n"
 	scanner := bufio.NewScanner(os.Stdin)
 	var inputCmd int64
 	stop := false
 	for !stop {
 		fmt.Println(menu)
-		scanner.Scan()
-		inputCmd, _ = strconv.ParseInt(scanner.Text(), 10, 64)
+		if !settings.DEBUGGER {
+			scanner.Scan()
+			inputCmd, _ = strconv.ParseInt(scanner.Text(), 10, 64)
+		} else {
+			inputCmd = int64(settings.MENU_CHOICE)
+		}
 		switch inputCmd {
 		case 0:
 			stop = true
@@ -345,6 +355,15 @@ func (r Rectangle) area() float64 {
 func getArea(s Shape) float64 {
 	return s.area()
 }
+func garbageCollectorIssue() *Point {
+	p1 := &Point{x: 10, y: 20}
+	p1.name = "MyPointer"
+	fmt.Println("Inside the function")
+	fmt.Printf("%p -> ", p1)
+	fmt.Println(*p1)
+
+	return p1
+}
 
 func structStuff() {
 
@@ -384,5 +403,11 @@ func structStuff() {
 		// fmt.Println(getArea(shape))
 
 	}
-
+	fmt.Println("Garbage collector example!:")
+	p3 := garbageCollectorIssue()
+	fmt.Println("outside the function")
+	fmt.Printf("%p -> ", p3)
+	fmt.Println(*p3)
+	fmt.Println("The compiler recognize that the pointer of MyPointer is used outside the function and allocate it in the heap instead of the stack")
+	fmt.Println("In this way the garbage collector doesn't clean the memory pointed by the variable when the function ends")
 }
