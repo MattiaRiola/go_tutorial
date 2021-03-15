@@ -1,4 +1,4 @@
-package go_tutorial
+package main
 
 import (
 	"bufio"
@@ -13,7 +13,7 @@ type Settings struct {
 	MENU_CHOICE int64
 }
 
-func helloWorldTutorial() {
+func main() {
 	settings := Settings{DEBUGGER: true, MENU_CHOICE: 9}
 	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n 9: struct\t\t \n"
 	scanner := bufio.NewScanner(os.Stdin)
@@ -25,6 +25,7 @@ func helloWorldTutorial() {
 			scanner.Scan()
 			inputCmd, _ = strconv.ParseInt(scanner.Text(), 10, 64)
 		} else {
+			stop = true
 			inputCmd = int64(settings.MENU_CHOICE)
 		}
 		switch inputCmd {
@@ -44,14 +45,19 @@ func helloWorldTutorial() {
 			break
 		case 5:
 			mapStuff()
+			break
 		case 6:
 			functionStuff()
+			break
 		case 7:
 			mutableImmutableStuff()
+			break
 		case 8:
 			pointersStuff()
+			break
 		case 9:
 			structStuff()
+			break
 		default:
 			break
 		}
