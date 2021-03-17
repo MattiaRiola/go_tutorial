@@ -16,3 +16,4 @@
 
 watch the program-flow folder to see more on how to use local module/packages using replace keyword in the go.mod file
 
+//UPDATE: improve with local package of other modules of this project instead of multiple package main in the same project
