@@ -408,5 +408,3 @@ func structStuff() {
 	fmt.Println("The compiler recognize that the pointer of MyPointer is used outside the function and allocate it in the heap instead of the stack")
 	fmt.Println("In this way the garbage collector doesn't clean the memory pointed by the variable when the function ends")
 }
-
-//TODO: context tutorial with go
