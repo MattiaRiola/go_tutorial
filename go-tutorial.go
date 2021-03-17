@@ -13,7 +13,7 @@ type Settings struct {
 	MENU_CHOICE int64
 }
 
-func main() {
+func tryingGoBasics() {
 	settings := Settings{DEBUGGER: true, MENU_CHOICE: 9}
 	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n 9: struct\t\t \n"
 	scanner := bufio.NewScanner(os.Stdin)
@@ -33,33 +33,24 @@ func main() {
 			stop = true
 		case 1:
 			printStuff()
-			break
 		case 2:
 			inputStuff()
-			break
 		case 3:
 			loops()
-			break
 		case 4:
 			arrayAndSliceStuff()
-			break
 		case 5:
 			mapStuff()
-			break
 		case 6:
 			functionStuff()
-			break
 		case 7:
 			mutableImmutableStuff()
-			break
 		case 8:
 			pointersStuff()
-			break
 		case 9:
 			structStuff()
-			break
 		default:
-			break
+			fmt.Println("not valid input")
 		}
 	}
 	fmt.Println("Bye bye")
@@ -232,7 +223,6 @@ func testFunction(x, y int, f1, f2 float64) (z1, z2, z3 int) {
 	mul := mulDeferFunction
 	myfunc := func(a int) {
 		fmt.Printf("a = %d\n", a)
-		return
 	}
 	fmt.Println("I can pass function to another function as parameter with this syntax:")
 	fmt.Println("func myFunc2(myFunc1 func(MF1parameters) MF1results, MF2parameter2) MF2result2")
@@ -301,12 +291,12 @@ func pointersStuff() {
 	fmt.Println("######################")
 	fmt.Println("pointers and functions")
 	change1 := func(str string) string {
+		fmt.Println("this is the input of the function " + str)
 		str = "Changed!"
 		return str
 	}
 	change2 := func(str *string) {
 		*str = "Changed!"
-		return
 	}
 	str1 := "Hello!"
 	fmt.Printf("str1 = %q   \t", str1)
@@ -409,6 +399,7 @@ func structStuff() {
 		// fmt.Println(getArea(shape))
 
 	}
+	fmt.Printf("area of shape[0] : %f", getArea(shapes[0]))
 	fmt.Println("Garbage collector example!:")
 	p3 := garbageCollectorIssue()
 	fmt.Println("outside the function")
