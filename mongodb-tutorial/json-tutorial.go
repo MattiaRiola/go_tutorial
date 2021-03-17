@@ -19,8 +19,8 @@ type Author struct {
 type Library struct {
 	Name    string  `json:"name"`
 	Address Address `json:"address"`
-	Open    bool    `json:"open"`
-	Books   []Book  `json:"books"`
+	Open    bool    `json:"open,omitempty"`
+	Books   []Book  `json:"books,omitempty"` //with ,omitempty  I wont have the books key if it is null/empty when parsing to json
 }
 type Address struct {
 	Street  string `json:"street"`
@@ -78,4 +78,7 @@ func playingWithJson() {
 	library1 := Library{Name: "PoliTO Library", Address: addressOutput, Open: true, Books: books}
 	jsonStringOutput2 := fromLibraryToJson(library1)
 	fmt.Println(" - Output2 result:\n" + jsonStringOutput2)
+
+	library2 := Library{Name: "UniTO Library", Address: addressOutput}
+	fmt.Println(" - Output3 result:\n" + fromLibraryToJson(library2))
 }
