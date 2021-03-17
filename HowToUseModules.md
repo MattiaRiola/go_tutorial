@@ -11,3 +11,8 @@
     ```
     - it will be download in $GOPATH/pkg folder
     - the dependencies informations are added in go.mod
+
+## Special uses
+
+watch the program-flow folder to see more on how to use local module/packages using replace keyword in the go.mod file
+
