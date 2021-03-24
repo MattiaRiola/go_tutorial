@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 
@@ -107,4 +108,73 @@ func playingWithMongo() {
 
 	//TODO : Contninue the tutorial: https://www.mongodb.com/blog/post/mongodb-go-driver-tutorial
 	deleteEverything(collection)
+
+	pointsCollection := client.Database("test").Collection("points")
+	rawmessagetry(pointsCollection)
+
+}
+
+func rawmessagetry(pointsCollection *mongo.Collection) {
+	fmt.Println("##### TESTING COLORS MONGO DB #######")
+	type Color struct {
+		Space string
+		Point json.RawMessage // delay parsing until we know the color space
+	}
+	type RGB struct {
+		R uint8
+		G uint8
+		B uint8
+	}
+	type YCbCr struct {
+		Y  uint8
+		Cb int8
+		Cr int8
+	}
+
+	var j = []byte(`[
+		{"Space": "YCbCr", "Point": {"Y": 255, "Cb": 0, "Cr": -10}},
+		{"Space": "RGB",   "Point": {"R": 98, "G": 218, "B": 255}}
+	]`)
+	var colors []Color
+	err := json.Unmarshal(j, &colors)
+	if err != nil {
+		log.Fatalln("error:", err)
+	}
+
+	for _, c := range colors {
+		insertOneRawMessage(c.Point, pointsCollection)
+
+		switch c.Space {
+		case "RGB":
+			rgb_dst := new(RGB)
+			err := json.Unmarshal(c.Point, rgb_dst)
+			if err != nil {
+				log.Fatalln("error:", err)
+			}
+			// pointsCollection.InsertOne(context.TODO(), rgb_dst)
+		case "YCbCr":
+			ycbcr_dst := new(YCbCr)
+			err := json.Unmarshal(c.Point, ycbcr_dst)
+			if err != nil {
+				log.Fatalln("error:", err)
+			}
+		}
+		fmt.Println(c.Space, string(c.Point))
+	}
+
+}
+
+func insertOneRawMessage(raw_msg json.RawMessage, collection *mongo.Collection) {
+	var v interface{}
+	err1 := json.Unmarshal(raw_msg, &v)
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+
+	result2, err2 := collection.InsertOne(context.TODO(), v)
+	if err2 != nil {
+		log.Fatal(err2)
+	}
+	fmt.Println("Inserted a single document: ", result2.InsertedID)
+
 }
