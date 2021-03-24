@@ -1,0 +1,237 @@
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "mtime": "128",
+            "path": "/Users/mattia/go/src/github.com/MattiaRiola/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/gorilla/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/julienschmidt/"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/Go src folders (for mattia mbp 16)",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:20:04 2021 UTC",
+    "unixTime": 1616595604,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+{
+    "snapshot": [
+        {
+            "count(*)": "12"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/number of chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:20:04 2021 UTC",
+    "unixTime": 1616595604,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "21eb349f9782b21d6f17a9696701905abdfbfb99",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/osquery info",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:20:09 2021 UTC",
+    "unixTime": 1616595609,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "mtime": "128",
+            "path": "/Users/mattia/go/src/github.com/MattiaRiola/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/gorilla/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/julienschmidt/"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/Go src folders (for mattia mbp 16)",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:20:33 2021 UTC",
+    "unixTime": 1616595633,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+{
+    "snapshot": [
+        {
+            "count(*)": "11"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/number of chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:20:33 2021 UTC",
+    "unixTime": 1616595633,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "21eb349f9782b21d6f17a9696701905abdfbfb99",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/osquery info",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:20:42 2021 UTC",
+    "unixTime": 1616595642,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "mtime": "128",
+            "path": "/Users/mattia/go/src/github.com/MattiaRiola/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/gorilla/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/julienschmidt/"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/Go src folders (for mattia mbp 16)",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:21:02 2021 UTC",
+    "unixTime": 1616595662,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+{
+    "snapshot": [
+        {
+            "count(*)": "11"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/number of chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:21:02 2021 UTC",
+    "unixTime": 1616595662,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "21eb349f9782b21d6f17a9696701905abdfbfb99",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/myPack1/osquery info",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 14:21:14 2021 UTC",
+    "unixTime": 1616595674,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}

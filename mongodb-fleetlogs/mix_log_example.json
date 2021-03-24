@@ -1,0 +1,177 @@
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "name": "chrome_crashpad_handler",
+            "pid": "30065"
+        },
+        {
+            "name": "Google Chrome",
+            "pid": "31402"
+        },
+        {
+            "name": "chrome_crashpad_handler",
+            "pid": "31406"
+        },
+        {
+            "name": "Google Chrome Helper (GPU)",
+            "pid": "31415"
+        },
+        {
+            "name": "Google Chrome Helper",
+            "pid": "31417"
+        },
+        {
+            "name": "Google Chrome Helper",
+            "pid": "31418"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "31426"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "31427"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "32971"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "32978"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "33015"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "33016"
+        },
+        {
+            "name": "Google Chrome Helper",
+            "pid": "33032"
+        },
+        {
+            "name": "Google Chrome Helper (Renderer)",
+            "pid": "33033"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/chrome processes-1",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 10:17:22 2021 UTC",
+    "unixTime": 1616581042,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "name": "pack/pack2/chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 10:17:35 2021 UTC",
+    "unixTime": 1616581055,
+    "epoch": 0,
+    "counter": 6,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    },
+    "columns": {
+        "name": "Google Chrome Helper (Renderer)",
+        "pid": "33015"
+    },
+    "action": "removed"
+}
+{
+    "name": "pack/pack2/chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 10:17:35 2021 UTC",
+    "unixTime": 1616581055,
+    "epoch": 0,
+    "counter": 6,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    },
+    "columns": {
+        "name": "Google Chrome Helper (Renderer)",
+        "pid": "33083"
+    },
+    "action": "added"
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "name": "pack/pack2/chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 10:17:40 2021 UTC",
+    "unixTime": 1616581060,
+    "epoch": 0,
+    "counter": 7,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    },
+    "columns": {
+        "name": "Google Chrome Helper (Renderer)",
+        "pid": "32971"
+    },
+    "action": "removed"
+}
+{
+    "name": "pack/pack2/chrome processes",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 10:17:40 2021 UTC",
+    "unixTime": 1616581060,
+    "epoch": 0,
+    "counter": 7,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    },
+    "columns": {
+        "name": "Google Chrome Helper (Renderer)",
+        "pid": "33086"
+    },
+    "action": "added"
+}
+{
+    "snapshot": [
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "5f4513e918647e66c644ef16be57434169ad04db",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/osquery info",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 10:17:46 2021 UTC",
+    "unixTime": 1616581066,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}

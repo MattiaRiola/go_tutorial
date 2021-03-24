@@ -1,0 +1,182 @@
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [ // -> value
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "e5e19ca50f5d7f2124bb1b917bf544323d2bb270",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/osquery info", //NUOVA Collection -> Pensare a come rinominarla
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9", //->ID
+    // MISSING : I NEED IP ADDRESS OF hostIdentifier -> IP
+    "calendarTime": "Wed Mar 24 09:46:45 2021 UTC", //NO NEED
+    "unixTime": 1616579205,
+    "epoch": 0, //NO NEED
+    "counter": 0, //NO NEED
+    "numerics": false, //NO NEED
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3", //identifier 
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "mtime": "128",
+            "path": "/Users/mattia/go/src/github.com/MattiaRiola/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/gorilla/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/julienschmidt/"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/Go src folders (for mattia mbp 16)",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 09:47:04 2021 UTC",
+    "unixTime": 1616579224,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "e5e19ca50f5d7f2124bb1b917bf544323d2bb270",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/osquery info",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 09:47:17 2021 UTC",
+    "unixTime": 1616579237,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "mtime": "128",
+            "path": "/Users/mattia/go/src/github.com/MattiaRiola/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/gorilla/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/julienschmidt/"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/Go src folders (for mattia mbp 16)",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 09:47:33 2021 UTC",
+    "unixTime": 1616579253,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "build_distro": "10.12",
+            "build_platform": "darwin",
+            "config_hash": "e5e19ca50f5d7f2124bb1b917bf544323d2bb270",
+            "config_valid": "1",
+            "extensions": "active",
+            "instance_id": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+            "pid": "31381",
+            "platform_mask": "21",
+            "start_time": "1616577617",
+            "uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+            "version": "4.5.1",
+            "watcher": "31380"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/osquery info",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 09:47:49 2021 UTC",
+    "unixTime": 1616579269,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+################ MATTIA LOGS ################
+new query detected: {
+    "snapshot": [
+        {
+            "mtime": "128",
+            "path": "/Users/mattia/go/src/github.com/MattiaRiola/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/gorilla/"
+        },
+        {
+            "mtime": "96",
+            "path": "/Users/mattia/go/src/github.com/julienschmidt/"
+        }
+    ],
+    "action": "snapshot",
+    "name": "pack/pack2/Go src folders (for mattia mbp 16)",
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Wed Mar 24 09:48:02 2021 UTC",
+    "unixTime": 1616579282,
+    "epoch": 0,
+    "counter": 0,
+    "numerics": false,
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
+level=info ts=2021-03-24T09: 48: 11.451919Z component=service method=ModifyPack err=null user=admin1 took=13.278265ms
