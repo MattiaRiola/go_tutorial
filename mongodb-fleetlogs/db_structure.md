@@ -133,6 +133,11 @@ Issue: the final "json" is the concatenation of stardard scehduled queries witho
 
 package "MongoDB" {
     database "db : fleetLogs" {
+        folder "Collection0 : statuslog" {
+            [log_c0_s1]
+            [log_c0_s2]
+            [log_c0_sN]
+        }
         folder "Collection1 : query1_name" {
             [log_c1_1]
             [log_c1_2]
