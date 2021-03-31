@@ -63,6 +63,11 @@ func fromLibraryToJson(library Library) (jsonString string) {
 	fmt.Println("I get this json string: " + jsonString)
 	return
 }
+
+func fromRawjsonToBook(msg json.RawMessage) {
+
+}
+
 func playingWithJson() {
 	fmt.Printf("\n\n#####\tjson tutorial\t#####\n\n")
 	authorInput := Author{Name: "Mr. Buzi", Age: 8}

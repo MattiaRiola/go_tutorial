@@ -136,6 +136,7 @@ func rawmessagetry(pointsCollection *mongo.Collection) {
 		{"Space": "RGB",   "Point": {"R": 98, "G": 218, "B": 255}}
 	]`)
 	var colors []Color
+
 	err := json.Unmarshal(j, &colors)
 	if err != nil {
 		log.Fatalln("error:", err)
@@ -172,6 +173,7 @@ func insertOneRawMessage(raw_msg json.RawMessage, collection *mongo.Collection) 
 	}
 
 	result2, err2 := collection.InsertOne(context.TODO(), v)
+	fmt.Println(v)
 	if err2 != nil {
 		log.Fatal(err2)
 	}
