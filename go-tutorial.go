@@ -6,6 +6,7 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"strings"
 )
 
 type Settings struct {
@@ -14,7 +15,8 @@ type Settings struct {
 }
 
 func tryingGoBasics() {
-	settings := Settings{DEBUGGER: true, MENU_CHOICE: 9}
+	settings := Settings{DEBUGGER: true, MENU_CHOICE: 1}
+
 	menu := "Main menu:\n  Enter:\n 0: Stop\t\t 1: print\t\t 2: input\n 3: loops\t\t 4: array\t\t 5: map\n 6: function\t\t 7: mutableImmutable\t 8: pointers\n 9: struct\t\t \n"
 	scanner := bufio.NewScanner(os.Stdin)
 	var inputCmd int64
@@ -74,8 +76,20 @@ func printStuff() {
 	fmt.Printf("Type of the variable (%%T): a = %T b = %T c = %T \n", a, b, c)
 	var out string = fmt.Sprintf("Printing the numbers (%%d or %%f etc...): a = %d , b = %d , c = %5f", a, b, c)
 	fmt.Println(out)
-}
 
+	stringStuff()
+}
+func stringStuff() {
+	fmt.Println("#########################")
+	var str string = "/father/child1/Your name is Heisenberg"
+	splitter := func(c rune) bool {
+		return c == '/'
+	}
+	fmt.Println("initial string: " + str)
+	fields := strings.FieldsFunc(str, splitter)
+	fmt.Printf("Fields are: %q\n", fields)
+	fmt.Printf("Field[2]: %q\n", fields[2])
+}
 func inputStuff() {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("Type your birth date: ")
