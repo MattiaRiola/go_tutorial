@@ -6,36 +6,8 @@ import (
 	"strings"
 )
 
-type Decorations struct {
-	Host_uuid string
-	Hostname  string
-}
-
-type DecorationsJSON struct {
-	Host_uuid string `json:"host_uuid"`
-	Hostname  string `json:"hostname"`
-}
-
-func (d *Decorations) MarshalJSON() ([]byte, error) {
-	return json.Marshal(DecorationsJSON{
-		d.Host_uuid,
-		d.Hostname,
-	})
-}
-
-func (d *Decorations) UnmarshalJSON(b []byte) error {
-	temp := &DecorationsJSON{}
-	err := json.Unmarshal(b, &temp)
-	if err != nil {
-		return err
-	}
-	d.Host_uuid = temp.Host_uuid
-	d.Hostname = temp.Hostname
-	return nil
-}
-
 type Snaplog struct {
-	Snapshot       []json.RawMessage
+	Snapshot       []interface{}
 	Action         string
 	Name           string
 	QueryName      string //Extra: this is the name of the collection
@@ -43,7 +15,8 @@ type Snaplog struct {
 	CalendarTime   string
 	UnixTime       int
 	Ip             string //Extra: I've no access to this information here in the log I've to query the fleet sql db
-	Dec            Decorations
+	Dec            interface{}
+	// Dec            Decorations
 	// Epoch          int
 	// Counter        int
 	// Numerics       bool
@@ -62,33 +35,26 @@ type SnaplogJSON struct {
 	Decorations    json.RawMessage   `json:"decorations"`
 }
 
-func (sl *Snaplog) MarshalJSON() ([]byte, error) {
-
-	raw_decorations, err := json.Marshal(&Decorations{sl.Dec.Host_uuid, sl.Dec.Hostname})
-	if err != nil {
-		log.Println(err)
-	}
-	return json.Marshal(SnaplogJSON{
-		sl.Snapshot,
-		sl.Action,
-		sl.Name,
-		sl.HostIdentifier,
-		sl.CalendarTime,
-		sl.UnixTime,
-		-1,    //sl.Epoch,
-		-1,    //sl.Counter,
-		false, //sl.Numerics,
-		json.RawMessage(raw_decorations),
-	})
-}
-
 func (sl *Snaplog) UnmarshalJSON(b []byte) error {
 	temp := &SnaplogJSON{}
 	err := json.Unmarshal(b, &temp)
 	if err != nil {
 		return err
 	}
-	sl.Snapshot = temp.Snapshot
+	var result []interface{}
+	for _, q := range temp.Snapshot {
+		var r interface{}
+		err := json.Unmarshal(q, &r)
+		if err != nil {
+			log.Println(err)
+		}
+		log.Println(r)
+		result = append(result, r)
+	}
+
+	log.Println("THIS IS THE RESULT:")
+	log.Println(result)
+	sl.Snapshot = result
 	sl.Action = temp.Action
 	sl.Name = temp.Name
 	splitter := func(c rune) bool {
@@ -104,13 +70,13 @@ func (sl *Snaplog) UnmarshalJSON(b []byte) error {
 	// sl.Numerics = temp.Numerics
 	sl.Ip = "TODO"
 	//TODO: find and insert the ip during the translation
-	tmp_dec := new(Decorations)
-	b_decorations := []byte(temp.Decorations)
-	err = json.Unmarshal(b_decorations, &tmp_dec)
+
+	var tmp_dec interface{}
+	err = json.Unmarshal(temp.Decorations, &tmp_dec)
 	if err != nil {
 		log.Println(err)
 	}
-	sl.Dec = *tmp_dec
+	sl.Dec = tmp_dec
 	return nil
 }
 
