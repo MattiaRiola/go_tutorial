@@ -55,9 +55,7 @@ func TestMongoConnection(ctx context.Context, mongoWriter *mongoLogWriter) {
 func (mw *mongoLogWriter) Write(ctx context.Context, logs []json.RawMessage) error {
 	for _, log := range logs {
 		snapLog := new(Snaplog)
-		b_log := []byte(log)
-		fmt.Printf("this is the log casted as []byte :\n%s\n\n", b_log)
-		err := json.Unmarshal(b_log, &snapLog)
+		err := json.Unmarshal(log, &snapLog)
 		if err != nil {
 			fmt.Println(err)
 		}
