@@ -124,9 +124,26 @@ Issue: the final "json" is the concatenation of stardard scehduled queries witho
 ```
 
 #### differential logs
-**//TODO: find a representation for differential scheduled logs**
 
-# Structure of log mongodb 
+When a differential query is sent for the first time the query response is made of a sequence of "added" type log in order to have the initial state.
+
+```plantuml
+@startjson
+{"name":"pack/DifferentialPack/Dekstop files","hostIdentifier":"be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9","calendarTime":"Wed Apr  7 12:18:35 2021 UTC","unixTime":1617797915,"epoch":0,"counter":1,"numerics":false,"decorations":{"host_uuid":"C3B43FB2-5E30-523C-AA51-7EE128D6B0B3","hostname":"servizi-mbp16-m.local"},"columns":{"mtime":"1617797907","path":"/Users/mattia/Desktop/cartella senza nome/","size":"64"},"action":"added"}
+@endjson
+```
+note: action can be "added" or "removed"
+
+#### status logs
+example:
+```plantuml
+@startjson
+{"hostIdentifier":"be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9","calendarTime":"Tue Apr  6 13:24:54 2021 UTC","unixTime":"1617715494","severity":"0","filename":"tls.cpp","line":"254","message":"TLS/HTTPS POST request to URI: https://localhost:8080/api/v1/osquery/distributed/read","version":"4.5.1","decorations":{"host_uuid":"C3B43FB2-5E30-523C-AA51-7EE128D6B0B3","hostname":"servizi-mbp16-m.local"}}
+@endjson
+```
+
+
+# Structure of log mongodb solution A
 
 ```plantuml
 @startuml
