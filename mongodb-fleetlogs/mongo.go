@@ -28,10 +28,10 @@ func DisconnectMongoWriter(ctx context.Context, mongoWriter *mongoLogWriter) {
 }
 
 // open a connection to mongodb and returns the mongoLogWriter
-func NewMongoLogWriter(ctx context.Context) (*mongoLogWriter, error) {
+func NewMongoLogWriter(mongouri string, ctx context.Context) (*mongoLogWriter, error) {
 
 	//TODO: define the mongodb uri somewhere else
-	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
+	clientOptions := options.Client().ApplyURI(mongouri)
 	// Connect to MongoDB
 
 	writer, err := mongo.Connect(ctx, clientOptions)
@@ -67,6 +67,10 @@ func (mw *mongoLogWriter) Write(ctx context.Context, logs []json.RawMessage) err
 		}
 
 		fmt.Println("creating collection: " + snapLog.QueryName)
+		if snapLog.QueryName == "" {
+			fmt.Println("void result")
+			return nil
+		}
 		collection := mw.db.Collection(snapLog.QueryName) //it creates the collection if it doesn't exist
 		result, err := collection.InsertOne(ctx, snapLog)
 		if err != nil {

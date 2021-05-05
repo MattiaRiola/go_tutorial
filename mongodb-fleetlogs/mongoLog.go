@@ -13,7 +13,7 @@ type Snaplog struct {
 	QueryName      string //Extra: this is the name of the collection
 	HostIdentifier string
 	CalendarTime   string
-	UnixTime       int
+	UnixTime       string
 	Ip             string //Extra: I've no access to this information here in the log I've to query the fleet sql db
 	Dec            interface{}
 	// Dec            Decorations
@@ -28,7 +28,7 @@ type SnaplogJSON struct {
 	Name           string            `json:"name"`
 	HostIdentifier string            `json:"hostIdentifier"`
 	CalendarTime   string            `json:"calendarTime"`
-	UnixTime       int               `json:"unixTime"`
+	UnixTime       string            `json:"unixTime"`
 	Epoch          int               `json:"epoch"`
 	Counter        int               `json:"counter"`
 	Numerics       bool              `json:"numerics"`

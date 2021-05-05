@@ -1,0 +1,14 @@
+{
+    "hostIdentifier": "be45d5e9-cf57-4d9d-a9ff-38ca8fb369f9",
+    "calendarTime": "Tue Apr  6 13:24:54 2021 UTC",
+    "unixTime": "1617715494",
+    "severity": "0",
+    "filename": "tls.cpp",
+    "line": "254",
+    "message": "TLS/HTTPS POST request to URI: https://localhost:8080/api/v1/osquery/distributed/read",
+    "version": "4.5.1",
+    "decorations": {
+        "host_uuid": "C3B43FB2-5E30-523C-AA51-7EE128D6B0B3",
+        "hostname": "servizi-mbp16-m.local"
+    }
+}
