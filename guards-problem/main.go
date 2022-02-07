@@ -6,7 +6,7 @@ import (
 )
 
 type Guard struct {
-	NumWatchOver uint32
+	PrisonerWatched []uint32
 }
 
 type Prisoner struct {
@@ -34,7 +34,7 @@ func main() {
 
 	var guards [g]Guard
 	for i := 0; i < g; i++ {
-		guards[i] = Guard{NumWatchOver: 0}
+		guards[i] = Guard{PrisonerWatched: []uint32{}}
 	}
 
 	var prisoners [n]Prisoner
